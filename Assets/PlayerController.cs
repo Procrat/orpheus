@@ -22,16 +22,12 @@ public class PlayerController : MonoBehaviour
 
     private void HandleInput ()
     {
-        if (Input.GetKeyDown (KeyCode.Escape) || Input.GetKeyDown (KeyCode.Q)) {
+        if (Input.GetButtonDown ("Cancel")) {
             Debug.Log ("Quitting.");
             Application.Quit ();
         }
 
-        if (Input.GetKey (KeyCode.RightArrow)) {
-            MoveRight ();
-        } else if (Input.GetKey (KeyCode.LeftArrow)) {
-            MoveLeft ();
-        }
+        Move (Input.GetAxis ("Horizontal"));
 
         // Temporary shortcut to win/die
         if (Input.GetKeyDown ("space")) {
@@ -39,18 +35,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void MoveLeft ()
+    private void Move (float horizontalTranslation)
     {
-        Move (Vector2.left);
-    }
-
-    private void MoveRight ()
-    {
-        Move (Vector2.right);
-    }
-
-    private void Move (Vector2 translationVector)
-    {
+        var translationVector = new Vector2 (horizontalTranslation, 0);
         transform.Translate (moveSpeed * translationVector);
     }
 
