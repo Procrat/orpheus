@@ -24,6 +24,13 @@ public class PlayerController : MonoBehaviour
         HandleInput ();
     }
 
+    void OnCollisionEnter2D (Collision2D collision)
+    {
+        if (collision.gameObject.tag == "deadlyOnTouch") {
+            Die ();
+        }
+    }
+
     private void HandleInput ()
     {
         if (Input.GetButtonDown ("Cancel")) {
@@ -35,7 +42,7 @@ public class PlayerController : MonoBehaviour
 
         Jump ();
 
-        // Temporary shortcut to win/die
+        // Temporary shortcut to win
         if (Input.GetKeyDown ("space")) {
             Win ();
         }
@@ -65,7 +72,13 @@ public class PlayerController : MonoBehaviour
         return Physics2D.OverlapArea (feetRect.min, feetRect.max, whatIsGround);
     }
 
-    public void Win ()
+    private void Die ()
+    {
+        // TODO Turn into a ghost and float the next floor
+        Debug.Log ("Hooray! You die!");
+    }
+
+    private void Win ()
     {
         Debug.Log ("Hooray! You won!");
         SceneManager.LoadScene ("End");
