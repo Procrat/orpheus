@@ -1,5 +1,4 @@
-﻿
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,6 +6,11 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
+    public float jumpSpeed;
+    public float feetWidth;
+
+    public GameObject feet;
+    public LayerMask whatIsGround;
 
     private Rigidbody2D body;
 
@@ -27,7 +31,9 @@ public class PlayerController : MonoBehaviour
             Application.Quit ();
         }
 
-        Move (Input.GetAxis ("Horizontal"));
+        Move ();
+
+        Jump ();
 
         // Temporary shortcut to win/die
         if (Input.GetKeyDown ("space")) {
@@ -35,10 +41,28 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Move (float horizontalTranslation)
+    private void Move ()
     {
-        var translationVector = new Vector2 (horizontalTranslation, 0);
+        var translationVector = new Vector2 (Input.GetAxis ("Horizontal"), 0);
         transform.Translate (moveSpeed * translationVector);
+    }
+
+
+    private void Jump ()
+    {
+        var feetRect = new Rect (0, 0, feetWidth, 0.01f);
+        feetRect.center = feet.transform.position;
+        Debug.DrawLine (feetRect.min, feetRect.max, Color.green);
+        if (Input.GetButton ("Jump") && isGrounded ()) {
+            body.velocity = jumpSpeed * Vector2.up;
+        }
+    }
+
+    private bool isGrounded ()
+    {
+        var feetRect = new Rect (0, 0, feetWidth, 0.01f);
+        feetRect.center = feet.transform.position;
+        return Physics2D.OverlapArea (feetRect.min, feetRect.max, whatIsGround);
     }
 
     public void Win ()
