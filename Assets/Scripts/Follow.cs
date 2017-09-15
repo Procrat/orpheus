@@ -24,6 +24,6 @@ public class Follow : MonoBehaviour
         transform.position = toFollow.transform.position;
         transform.position = Vector2.Max(transform.position, cameraBoundingBox.min);
         transform.position = Vector2.Min(transform.position, cameraBoundingBox.max);
-        transform.Translate (2 * Vector3.back);
+        transform.Translate (10 * Vector3.back);
     }
 }
