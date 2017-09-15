@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameStarter : MonoBehaviour
+public class NextScene : MonoBehaviour
 {
     public string triggerKey;
     public string nextSceneName;
