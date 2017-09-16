@@ -42,9 +42,24 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 665291065
-    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Back Background
+    uniqueID: 665291065
+    locked: 0
+  - name: Front Background
+    uniqueID: 2933771067
+    locked: 0
+  - name: Floors & Walls
+    uniqueID: 2782060439
+    locked: 0
+  - name: Ghost
+    uniqueID: 175642517
+    locked: 0
+  - name: Enemies
+    uniqueID: 2459635945
+    locked: 0
+  - name: Fire & Spikes
+    uniqueID: 4133178669
     locked: 0
