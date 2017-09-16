@@ -21,7 +21,7 @@ public class Follow : MonoBehaviour
         var cameraBoundingBox = new Rect(worldBoundingBox.min + halfScreenDiagonal,
                                          worldBoundingBox.size - halfScreenDiagonal);
 
-        transform.position = toFollow.transform.position;
+		transform.position = toFollow.transform.position - 2.5f*Vector3.up;
         transform.position = Vector2.Max(transform.position, cameraBoundingBox.min);
         transform.position = Vector2.Min(transform.position, cameraBoundingBox.max);
         transform.Translate (10 * Vector3.back);
