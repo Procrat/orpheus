@@ -18,7 +18,6 @@ public class WalkerPlayer : MonoBehaviour {
             return;
         }
         if (collision.gameObject.tag == "deadlyOnTouch") {
-            Debug.Log("Collided w/" + collision.gameObject);
             playerManager.SendMessage("Die");
             return;
         }
