@@ -9,6 +9,7 @@ public class FollowAbility : MonoBehaviour {
 	public float feetWidth;
 
 	private GameObject player;
+	private PlayerManager playerManager;
 
 	public LayerMask whatIsGround;	
 	private Rigidbody2D body;
@@ -16,19 +17,22 @@ public class FollowAbility : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		player = GameObject.FindWithTag ("Player");
+		playerManager = GameObject.Find ("Player manager").GetComponent<PlayerManager>();
+		player = playerManager.player;
 		body = GetComponent<Rigidbody2D> ();	
 	}
 
 	// Update is called once per frame
 	public void Move () {
 		
+		player = playerManager.player;
+
 		if (transform.position.x < player.transform.position.x) {
-			transform.Translate (0.05f, 0, 0);
+			transform.Translate (0.07f, 0, 0);
 		}
 
 		if (transform.position.x > player.transform.position.x) {
-			transform.Translate (-0.05f, 0, 0);
+			transform.Translate (-0.07f, 0, 0);
 		}
 
 	}
@@ -41,7 +45,7 @@ public class FollowAbility : MonoBehaviour {
 		
 
 	private void Jump (){
-		float jumpSpeed = 12;
+		float jumpSpeed = 14;
 		body.velocity = jumpSpeed * Vector2.up;
 	}
 }
