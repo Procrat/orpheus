@@ -52,6 +52,8 @@ public class AnimationScript : MonoBehaviour {
 	
 	public void ChangeAnim(string newAnim)
 	{
+		if(animName == newAnim) return;
+		
 		animName = newAnim;
 		fNum = 0;
 		timeCounter = 0;

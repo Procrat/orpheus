@@ -16,6 +16,27 @@ public class WalkerAbilities: MonoBehaviour {
         var walkAmount = amount * walkSpeed * Time.fixedDeltaTime;
 
         transform.Translate(walkAmount * Vector2.right);
+		
+		AnimationScript animationScript = GetComponent<AnimationScript>();
+		
+		if(walkAmount < 0)
+		{
+			animationScript.ChangeAnim("WalkerWalk");
+			animationScript.frameTime = 0.2f;
+			animationScript.flipX = true;
+		}
+		else
+		if(walkAmount > 0)
+		{
+			animationScript.ChangeAnim("WalkerWalk");
+			animationScript.frameTime = 0.2f;
+			animationScript.flipX = false;
+		}
+		else
+		{
+			animationScript.ChangeAnim("WalkerIdle");
+			animationScript.frameTime = 0.4f;
+		}
     }
 
     void OnCollisionEnter2D(Collision2D collision) {

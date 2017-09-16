@@ -22,12 +22,13 @@ GameObject:
   - component: {fileID: 114212128780607378}
   - component: {fileID: 114043342878152020}
   - component: {fileID: 114544763456506294}
+  - component: {fileID: 114036331834706198}
   - component: {fileID: 212822706135074868}
   - component: {fileID: 50989569873791274}
   - component: {fileID: 61648247696577596}
   m_Layer: 0
   m_Name: Walker
-  m_TagString: enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1634955075323802}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.45, y: 3.17, z: 0}
+  m_LocalPosition: {x: -0.05, y: 0.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4334085802728800}
@@ -85,7 +86,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 1
+  m_Mass: 4.25
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 4
@@ -106,26 +107,41 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.38, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.35, y: 0.45}
+    oldSize: {x: 2.57, y: 2.78}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.7, y: 2.5}
   m_EdgeRadius: 0
---- !u!114 &114043342878152020
+--- !u!114 &114036331834706198
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1634955075323802}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a72f730ad740ec74689752c46d352ed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animName: WalkerWalk
+  frameTime: 0.2
+  flipX: 0
+  flipY: 0
+--- !u!114 &114043342878152020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1634955075323802}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa75c242c260a7045b61a6a3da3f26cc, type: 3}
   m_Name: 
@@ -149,7 +165,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1634955075323802}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 971fd25f44e6ab34e83cfcdf5026fd5a, type: 3}
   m_Name: 
@@ -187,7 +203,7 @@ SpriteRenderer:
   m_SortingLayerID: -1835331351
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8b728b6d8137add4aa8347ec4be357a9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 36c8b9f30fb80b6469bb9baa50d8465b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
