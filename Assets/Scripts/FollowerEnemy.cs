@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//This is the AI which controls the Runner
 public class FollowerEnemy : MonoBehaviour {
 
 	private GameObject player;

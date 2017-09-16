@@ -945,12 +945,14 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1482963733}
-  - component: {fileID: 1482963732}
+  - component: {fileID: 1482963737}
   - component: {fileID: 1482963734}
+  - component: {fileID: 1482963738}
+  - component: {fileID: 1482963732}
   - component: {fileID: 1482963735}
   - component: {fileID: 1482963736}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Walker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1005,7 +1007,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1482963731}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.74, y: -0.17, z: 0}
+  m_LocalPosition: {x: 6.76, y: -0.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1019,7 +1021,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1482963731}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55cecf284567b4a42b9e22c66c755f41, type: 3}
+  m_Script: {fileID: 11500000, guid: aa75c242c260a7045b61a6a3da3f26cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!50 &1482963735
@@ -1067,6 +1069,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1482963737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1482963731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55cecf284567b4a42b9e22c66c755f41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1482963738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1482963731}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 971fd25f44e6ab34e83cfcdf5026fd5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1514051997
 GameObject:
   m_ObjectHideFlags: 0
