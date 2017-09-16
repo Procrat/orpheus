@@ -24,10 +24,12 @@ public class WalkerAI : MonoBehaviour {
 
 		if (coll.gameObject.tag == "LeftWall") {
 			WalkRight ();
+			abilityScript.SetWalkSpeed (2f);
 		}
 
 		if (coll.gameObject.tag == "RightWall") {
 			WalkLeft ();
+			abilityScript.SetWalkSpeed (2f);
 		}
 	}
 

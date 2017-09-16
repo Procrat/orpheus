@@ -19,7 +19,7 @@ public class WalkerPlayer : MonoBehaviour {
 		float horizontalVelocity = Input.GetAxis("Horizontal");
 
 		abilityScript.Move (horizontalVelocity);
-	
+		
 	}
 
 
