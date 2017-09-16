@@ -100,6 +100,7 @@ public class PlayerController : MonoBehaviour
         // TODO Make new game object of lifeless body that we're levaing
         isGhost = true;
         body.isKinematic = true;
+        body.velocity = Vector2.zero;
         possessedCollider.enabled = false;
         ghostCollider.enabled = true;
     }
