@@ -2,20 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//This is the AI which controls the Runner
-public class FollowerEnemy : MonoBehaviour {
-
+public class FollowAbility : MonoBehaviour {
+	
 	private GameObject player;
 
 	// Use this for initialization
 	void Start () {
-		player = GameObject.Find ("Player");
+		player = GameObject.FindWithTag ("Player");
 	}
-	
+
 	// Update is called once per frame
-	void Update () {
+	public void Move () {
+		
 		if (transform.position.x < player.transform.position.x) {
-			transform.Translate (0.1f, 0, 0);
+			transform.Translate (0.01f, 0, 0);
+		}
+
+		if (transform.position.x > player.transform.position.x) {
+			transform.Translate (-0.01f, 0, 0);
 		}
 	}
+
 }

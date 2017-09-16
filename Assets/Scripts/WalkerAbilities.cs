@@ -28,3 +28,4 @@ public class WalkerAbilities: MonoBehaviour {
         this.walkSpeed = speed;
     }
 }
+
