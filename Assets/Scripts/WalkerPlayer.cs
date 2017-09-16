@@ -8,18 +8,13 @@ public class WalkerPlayer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
 		abilityScript = gameObject.GetComponent<WalkerAbilities> ();
-
-
 	}
 
 
 	void FixedUpdate(){
 		float horizontalVelocity = Input.GetAxis("Horizontal");
-
-		abilityScript.Move (horizontalVelocity);
-		
+		abilityScript.Move (horizontalVelocity);	
 	}
 
 

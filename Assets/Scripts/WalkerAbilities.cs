@@ -9,13 +9,14 @@ public class WalkerAbilities: MonoBehaviour {
 
 	float walkingDirection = -1.0f; //positive is right, negative is left
 
+
 	public void Move(float amount){
 
-		if(walkSpeed > 2){
-			walkSpeed = walkSpeed - 0.2f;
+		if(amount == 0){
+			walkSpeed = 2;
 		}
 
-		walkSpeed = walkSpeed + (acceleration*2);
+		walkSpeed = walkSpeed + (acceleration);
 
 		Vector3 walkAmount = new Vector3();
 		walkAmount.x = amount * walkSpeed * Time.fixedDeltaTime;
