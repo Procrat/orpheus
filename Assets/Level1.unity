@@ -719,6 +719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   verticalDisplacement: 2.5
+  depth: 10
   playerManagerObject: {fileID: 333432742}
   leftBoundary: {fileID: 1286282918}
   bottomBoundary: {fileID: 282932933}
