@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D (Collision2D collision)
     {
-        if (isGhost) {
+        if (!isGhost) {
             if (collision.gameObject.tag == "deadlyOnTouch") {
                 Die ();
             }
@@ -96,6 +96,7 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log ("Hooray! You die!");
         // TODO Do some animation to turn into a ghost (and perhaps slowly fade away)
+        GetComponent<SpriteRenderer>().color = Color.red;
         // TODO Make new game object of lifeless body that we're levaing
         isGhost = true;
         body.isKinematic = true;
