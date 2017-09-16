@@ -4,18 +4,15 @@ using UnityEngine;
 
 public class WalkerPlayer : MonoBehaviour {
 
-	WalkerAbilities abilityScript;
+	private WalkerAbilities abilityScript;
 
 	// Use this for initialization
 	void Start () {
 		abilityScript = gameObject.GetComponent<WalkerAbilities> ();
 	}
 
-
 	void FixedUpdate(){
 		float horizontalVelocity = Input.GetAxis("Horizontal");
-		abilityScript.Move (horizontalVelocity);	
+		abilityScript.Move (horizontalVelocity);
 	}
-
-
 }

@@ -4,32 +4,23 @@ using UnityEngine;
 
 public class WalkerAI : MonoBehaviour {
 
-	WalkerAbilities abilityScript;
-	float walkingDirection = 1f;
+	private WalkerAbilities abilityScript;
+	private float walkingDirection = -1f;
 
-	// Use this for initialization
 	void Start () {
 		abilityScript = gameObject.GetComponent<WalkerAbilities> ();
 	}
 	
-	// Update is called once per frame
 	void FixedUpdate () {
 		abilityScript.Move (walkingDirection);
 	}
 
-
-
-	void OnCollisionEnter2D(Collision2D coll){
+	void OnCollisionEnter2D(Collision2D collision) {
 		//swap directions if you collide with one of the walls.
-
-		if (coll.gameObject.tag == "LeftWall") {
+		if (collision.gameObject.tag == "LeftWall") {
 			WalkRight ();
-			abilityScript.SetWalkSpeed (2f);
-		}
-
-		if (coll.gameObject.tag == "RightWall") {
+		} else if (collision.gameObject.tag == "RightWall") {
 			WalkLeft ();
-			abilityScript.SetWalkSpeed (2f);
 		}
 	}
 
@@ -40,8 +31,4 @@ public class WalkerAI : MonoBehaviour {
 	public void WalkLeft(){
 		walkingDirection = -1f;
 	}
-
-
-
-
 }

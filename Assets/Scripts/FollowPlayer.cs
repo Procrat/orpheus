@@ -2,16 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Follow : MonoBehaviour
+public class FollowPlayer : MonoBehaviour
 {
-    public GameObject toFollow;
+    public GameObject playerManagerObject;
     public GameObject leftBoundary;
     public GameObject bottomBoundary;
     public GameObject rightBoundary;
     public GameObject topBoundary;
 
+    private PlayerManager playerManager;
+
+    void Start()
+    {
+        playerManager = playerManagerObject.GetComponent<PlayerManager>();
+    }
+
     void Update ()
     {
+        var player = playerManager.player;
+
         var worldBoundingBox = Rect.MinMaxRect(leftBoundary.GetComponent<Collider2D>().bounds.min.x,
                                                bottomBoundary.GetComponent<Collider2D>().bounds.min.y,
                                                rightBoundary.GetComponent<Collider2D>().bounds.max.x,
@@ -21,7 +30,7 @@ public class Follow : MonoBehaviour
         var cameraBoundingBox = new Rect(worldBoundingBox.min + halfScreenDiagonal,
                                          worldBoundingBox.size - halfScreenDiagonal);
 
-		transform.position = toFollow.transform.position - 2.5f*Vector3.up;
+		transform.position = player.transform.position - 2.5f*Vector3.up;
         transform.position = Vector2.Max(transform.position, cameraBoundingBox.min);
         transform.position = Vector2.Min(transform.position, cameraBoundingBox.max);
         transform.Translate (10 * Vector3.back);

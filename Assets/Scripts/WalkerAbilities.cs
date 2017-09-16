@@ -4,45 +4,33 @@ using UnityEngine;
 
 public class WalkerAbilities: MonoBehaviour {
 
-	float walkSpeed = 2.0f;
-	float acceleration = 0.3f;
+	public float walkSpeed = 2.0f;
+	public float acceleration = 0.3f;
+    public GameObject playerManager;
 
-	float walkingDirection = -1.0f; //positive is right, negative is left
-
-
-	public void Move(float amount){
-
-		if(amount == 0){
+	public void Move(float amount) {
+		if (amount == 0) {
 			walkSpeed = 2;
 		}
 
-		walkSpeed = walkSpeed + (acceleration);
+		walkSpeed += acceleration * Time.fixedDeltaTime;
+		var walkAmount = amount * walkSpeed * Time.fixedDeltaTime;
 
-		Vector3 walkAmount = new Vector3();
-		walkAmount.x = amount * walkSpeed * Time.fixedDeltaTime;
-
-		//walkAmount.x = walkingDirection * walkSpeed * Time.deltaTime;
-
-		transform.Translate(walkAmount);
+		transform.Translate(walkAmount * Vector2.right);
 	}
 
+	void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.tag == "deadlyOnTouch") {
+            playerManager.SendMessage("Die");
+			return;
+        }
 
-	void OnCollisionEnter2D(Collision2D coll){
-		//swap directions if you collide with one of the walls.
-
-		if (coll.gameObject.tag == "LeftWall") {
-			SetWalkSpeed (2f);
-		}
-
-		if (coll.gameObject.tag == "RightWall") {
+		if (collision.gameObject.tag == "LeftWall" || collision.gameObject.tag == "RightWall") {
 			SetWalkSpeed (2f);
 		}
 	}
 
-
-	public void SetWalkSpeed(float w){
-		this.walkSpeed = w;
+	public void SetWalkSpeed(float speed) {
+		this.walkSpeed = speed;
 	}
-
-
 }

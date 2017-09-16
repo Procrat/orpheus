@@ -7,6 +7,7 @@ TagManager:
   - deadlyOnTouch
   - LeftWall
   - RightWall
+  - enemy
   layers:
   - Default
   - TransparentFX
