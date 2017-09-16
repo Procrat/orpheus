@@ -737,7 +737,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 627405981}
   ghost: {fileID: 999469509}
-  ghostPerishDelay: 2.5
+  ghostPerishDelay: 3
 --- !u!4 &333432744
 Transform:
   m_ObjectHideFlags: 0
@@ -1875,7 +1875,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &999469510
 Transform:
   m_ObjectHideFlags: 0
