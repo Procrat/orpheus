@@ -27,9 +27,9 @@ public class PlayerManager : MonoBehaviour {
         }
 
         // Temporary shortcut to win
-        if (Input.GetKeyDown ("space")) {
+        /*if (Input.GetKeyDown ("space")) {
             Win ();
-        }
+        }*/
 	}
 
     public void Die ()
@@ -80,7 +80,7 @@ public class PlayerManager : MonoBehaviour {
         SceneManager.LoadScene("Died");
     }
 
-    private void Win ()
+    public void Win ()
     {
         Debug.Log ("Hooray! You won!");
         SceneManager.LoadScene ("End");

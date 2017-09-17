@@ -18,6 +18,8 @@ public class HeroController : Player {
         if (!enabled) {
             return;
         }
+		Debug.Log(collision.gameObject.name);
+		
         if (collision.gameObject.tag == "deadlyOnTouch") {
             playerManager.SendMessage("Die");
             Die();

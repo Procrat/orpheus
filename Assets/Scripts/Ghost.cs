@@ -12,6 +12,11 @@ public class Ghost : MonoBehaviour
         if (other.gameObject.tag == "enemy") {
             playerManager.SendMessage("Possess", other.gameObject);
         }
+        else
+        if(other.gameObject.name == "Lady")
+        {
+            playerManager.GetComponent<PlayerManager>().Win();
+        }
     }
 
     private void FixedUpdate ()
