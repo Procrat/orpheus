@@ -14,8 +14,8 @@ public class PlayerManager : MonoBehaviour {
 	void Update()
 	{
         if (Input.GetButtonDown ("Cancel")) {
-            Debug.Log ("Quitting.");
-            Application.Quit ();
+            Debug.Log("Quitting level.");
+            SceneManager.LoadScene("Start");
         }
 
         // Temporary shortcut to win
@@ -62,7 +62,8 @@ public class PlayerManager : MonoBehaviour {
     {
         yield return new WaitForSeconds (ghostPerishDelay);
         Debug.Log("Awww. You lost.");
-        SceneManager.LoadScene("End");
+        // TODO change this once there is a death-scene
+        SceneManager.LoadScene("Level1");
     }
 
     private void Win ()
