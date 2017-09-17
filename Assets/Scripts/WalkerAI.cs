@@ -16,9 +16,15 @@ public class WalkerAI : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
-        if (!enabled) {
+		if (!enabled) {
             return;
         }
+
+		if (collision.gameObject.tag == "deadlyOnTouch") {
+			walkingDirection = walkingDirection * -1;
+			abilityScript.SetWalkSpeed (2);
+		}
+
         //swap directions if you collide with one of the walls.
         if (collision.gameObject.tag == "LeftWall") {
             WalkRight();
