@@ -28,11 +28,11 @@ public class FollowAbility : MonoBehaviour {
 		player = playerManager.player;
 
 		if (transform.position.x < player.transform.position.x) {
-			transform.Translate (0.07f, 0, 0);
+			transform.Translate (0.09f, 0, 0);
 		}
 
 		if (transform.position.x > player.transform.position.x) {
-			transform.Translate (-0.07f, 0, 0);
+			transform.Translate (-0.09f, 0, 0);
 		}
 
 	}
@@ -45,7 +45,7 @@ public class FollowAbility : MonoBehaviour {
 		
 
 	private void Jump (){
-		float jumpSpeed = 14;
+		float jumpSpeed = 15;
 		body.velocity = jumpSpeed * Vector2.up;
 	}
 }
