@@ -48,17 +48,18 @@ public class Ghost : MonoBehaviour
         Vector2 direction = possessee.transform.position - transform.position;
         Vector2 moveVector = Vector2.ClampMagnitude(direction, floatSpeed);
 
-        float fadeFactor = direction.magnitude / possessPath.magnitude;
-        this.GetComponent<SpriteRenderer>().material.color = new Color(1, 1, 1, fadeFactor);
-
         if (moveVector.magnitude < floatSpeed - 0.0001)
         {
             Debug.Log("Actually possessing...");
             gonnaPossess = false;
+            this.GetComponent<SpriteRenderer>().material.color = new Color(1, 1, 1, 1);
             playerManager.GetComponent<PlayerManager>().ActuallyPossess(possessee);
         }
         else
         {
+            float fadeFactor = direction.magnitude / possessPath.magnitude;
+            this.GetComponent<SpriteRenderer>().material.color = new Color(1, 1, 1, fadeFactor);
+
             transform.Translate(moveVector);
         }
     }
