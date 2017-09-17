@@ -131,10 +131,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a72f730ad740ec74689752c46d352ed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animName: WalkerIdle
+  animName: Walker/WalkerIdle
   frameTime: 0.2
   flipX: 0
   flipY: 0
+  loop: 0
 --- !u!114 &114043342878152020
 MonoBehaviour:
   m_ObjectHideFlags: 1
