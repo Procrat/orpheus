@@ -19,12 +19,13 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4114041346441008}
+  - component: {fileID: 114618242832748134}
   - component: {fileID: 114774050618163888}
   - component: {fileID: 212614561459581078}
   - component: {fileID: 50414007226482710}
   - component: {fileID: 61934284465459522}
   m_Layer: 0
-  m_Name: First player
+  m_Name: Hero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,6 +118,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9357492, y: 2.6638498}
   m_EdgeRadius: 0
+--- !u!114 &114618242832748134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1326488714916714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab1ae1fb78c71f499fe01d56e31ff02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerManager: {fileID: 0}
+  walkSpeed: 4
 --- !u!114 &114774050618163888
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -128,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a72f730ad740ec74689752c46d352ed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animName: Walker/WalkerIdle
+  animName: Hero/HeroIdle
   frameTime: 0.2
   flipX: 0
   flipY: 0
@@ -163,7 +177,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1835331351
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: eb34fb128364c284780ddab0b8d7916f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
