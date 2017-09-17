@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WalkerPlayer : MonoBehaviour {
+public class WalkerPlayer : Player {
 
     public GameObject playerManager;
 

@@ -33,7 +33,7 @@ public class PlayerManager : MonoBehaviour {
 
         Debug.Log ("Hooray! You die!");
 
-		player.GetComponent<WalkerPlayer>().enabled = false;
+		player.GetComponent<Player>().enabled = false;
         // Don't tag the currently possessed body as an enemy;
         // otherwise, we'll just possess it again.
         player.tag = "Untagged";
