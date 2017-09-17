@@ -29,7 +29,7 @@ public class IntelligentAI : MonoBehaviour {
 
 		var distanceToPlayer = Vector3.Distance (transform.position, player.transform.position);
 		dir = (player.transform.position - transform.position).normalized;
-		if (distanceToPlayer < 4	) {
+		if (distanceToPlayer < 4) {
 			if (player.transform.position.x > transform.position.x && currentState.getDirectionFacing () == 1) {
 				//follow
 				currentState = GetComponent<AttackState> ();

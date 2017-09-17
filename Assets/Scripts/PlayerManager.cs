@@ -11,11 +11,19 @@ public class PlayerManager : MonoBehaviour {
 
 	private Coroutine dieAfterAWhile;
 
+	public AudioClip deathSound;
+	public AudioClip possessSound;
+	private AudioSource source;
+
+	void Awake(){
+		source = GetComponent<AudioSource> ();
+	}
+
 	void Update()
 	{
         if (Input.GetButtonDown ("Cancel")) {
-            Debug.Log ("Quitting.");
-            Application.Quit ();
+            Debug.Log("Quitting level.");
+            SceneManager.LoadScene("Start");
         }
 
         // Temporary shortcut to win
@@ -31,6 +39,9 @@ public class PlayerManager : MonoBehaviour {
 			return;
 		}
 
+
+		source.PlayOneShot (deathSound, 1f);
+
         Debug.Log ("Hooray! You die!");
 
 		player.GetComponent<Player>().enabled = false;
@@ -44,6 +55,9 @@ public class PlayerManager : MonoBehaviour {
     }
 
 	public void Possess(GameObject enemy) {
+		
+		source.PlayOneShot (possessSound, 1f);
+
 		if (player != ghost) {
 			Debug.Log("Internal error: Tried to possess while not being a ghost!");
 			return;
@@ -62,7 +76,8 @@ public class PlayerManager : MonoBehaviour {
     {
         yield return new WaitForSeconds (ghostPerishDelay);
         Debug.Log("Awww. You lost.");
-        SceneManager.LoadScene("End");
+        // TODO change this once there is a death-scene
+        SceneManager.LoadScene("Died");
     }
 
     private void Win ()

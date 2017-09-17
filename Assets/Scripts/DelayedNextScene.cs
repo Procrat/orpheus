@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DelayedNextScene : MonoBehaviour {
+public class DelayedNextScene : MonoBehaviour
+{
+    public float startDelay;
+    public string scene;
 
-	public float startDelay;
-	public string scene;
-
-    void Start ()
+    void Start()
     {
-        StartCoroutine (StartAfterDelay ());
+        StartCoroutine(StartAfterDelay());
     }
 
-    IEnumerator StartAfterDelay ()
+    IEnumerator StartAfterDelay()
     {
-        yield return new WaitForSeconds (startDelay);
-        SceneManager.LoadScene (scene);
+        yield return new WaitForSeconds(startDelay);
+        SceneManager.LoadScene(scene);
     }
 }

@@ -20,15 +20,6 @@ public class AnimationScript : MonoBehaviour {
 	void Awake()
 	{
 		loadFrames(animName);
-	}
-	
-	void loadFrames(string s)
-	{
-		frames = Resources.LoadAll<Sprite>(s);
-	}
-	
-	// Use this for initialization
-	void Start () {
 		sr = GetComponent<SpriteRenderer>();
 		fNum = 0;
 		timeCounter = 0f;
@@ -37,6 +28,11 @@ public class AnimationScript : MonoBehaviour {
 		loop = true;
 		finished = false;
 		finishCallback = null;
+	}
+	
+	void loadFrames(string s)
+	{
+		frames = Resources.LoadAll<Sprite>(s);
 	}
 	
 	// Update is called once per frame
