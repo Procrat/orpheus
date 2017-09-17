@@ -70,6 +70,7 @@ public class WalkerAbilities: MonoBehaviour {
 		animationScript.ChangeAnim("Walker/WalkerPossess", false, AfterAnim);
 		animationScript.frameTime = 0.13f;
 		state = "possess";
+		SetWalkSpeed(2f);
 	}
 	
 	private void AfterAnim(string anim)
