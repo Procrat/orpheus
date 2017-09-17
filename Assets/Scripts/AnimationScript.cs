@@ -12,6 +12,7 @@ public class AnimationScript : MonoBehaviour {
 	public float frameTime;
 	public bool flipX;
 	public bool flipY;
+	public bool loop;
 	
 	void Awake()
 	{
@@ -39,7 +40,11 @@ public class AnimationScript : MonoBehaviour {
 		{
 			timeCounter = 0f;
 			fNum++;
-			if(fNum >= frames.Length) fNum = 0;
+			if(fNum >= frames.Length)
+			{
+				if(loop) fNum = 0;
+				else fNum = frames.Length - 1;
+			}
 		}
 		
 		transform.localScale = Vector3.one;
@@ -50,14 +55,20 @@ public class AnimationScript : MonoBehaviour {
 		sr.sprite = frames[fNum];
 	}
 	
-	public void ChangeAnim(string newAnim)
+	public void ChangeAnim(string newAnim, bool loop)
 	{
 		if(animName == newAnim) return;
 		
 		animName = newAnim;
 		fNum = 0;
 		timeCounter = 0;
+		this.loop = loop;
 		
 		loadFrames(animName);
+	}
+	
+	public void ChangeAnim(string newAnim)
+	{
+		ChangeAnim(newAnim, true);
 	}
 }

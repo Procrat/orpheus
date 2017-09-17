@@ -12,7 +12,7 @@ public class WalkerAI : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        abilityScript.Move(walkingDirection);
+        abilityScript.Move(walkingDirection, false);
     }
 
     void OnCollisionEnter2D(Collision2D collision) {

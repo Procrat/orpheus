@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 652f09f9222622043952cfa09f57618d
-timeCreated: 1505608390
+guid: a1371b8b8da5a45408a66684595e8a00
+timeCreated: 1505608525
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: WalkerWalk_0
-    21300002: WalkerWalk_1
-    21300004: WalkerWalk_2
-    21300006: WalkerWalk_3
+    21300000: WalkerWalk-P_0
+    21300002: WalkerWalk-P_1
+    21300004: WalkerWalk-P_2
+    21300006: WalkerWalk-P_3
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -79,7 +79,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WalkerWalk_0
+      name: WalkerWalk-P_0
       rect:
         serializedVersion: 2
         x: 0
@@ -93,7 +93,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: WalkerWalk_1
+      name: WalkerWalk-P_1
       rect:
         serializedVersion: 2
         x: 320
@@ -107,7 +107,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: WalkerWalk_2
+      name: WalkerWalk-P_2
       rect:
         serializedVersion: 2
         x: 640
@@ -121,7 +121,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: WalkerWalk_3
+      name: WalkerWalk-P_3
       rect:
         serializedVersion: 2
         x: 960

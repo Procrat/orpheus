@@ -1,13 +1,11 @@
 fileFormatVersion: 2
-guid: 652f09f9222622043952cfa09f57618d
-timeCreated: 1505608390
+guid: 13195b6a65d0c1f409a59093cc742207
+timeCreated: 1505608478
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: WalkerWalk_0
-    21300002: WalkerWalk_1
-    21300004: WalkerWalk_2
-    21300006: WalkerWalk_3
+    21300000: WalkerIdle-P_0
+    21300002: WalkerIdle-P_1
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -79,7 +77,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WalkerWalk_0
+      name: WalkerIdle-P_0
       rect:
         serializedVersion: 2
         x: 0
@@ -93,38 +91,10 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: WalkerWalk_1
+      name: WalkerIdle-P_1
       rect:
         serializedVersion: 2
         x: 320
-        y: 0
-        width: 320
-        height: 285
-      alignment: 9
-      pivot: {x: 0.28, y: 0.47}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: WalkerWalk_2
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 320
-        height: 285
-      alignment: 9
-      pivot: {x: 0.28, y: 0.47}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: WalkerWalk_3
-      rect:
-        serializedVersion: 2
-        x: 960
         y: 0
         width: 320
         height: 285

@@ -110,9 +110,9 @@ BoxCollider2D:
   m_Offset: {x: 0.38, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.35, y: 0.45}
-    oldSize: {x: 2.57, y: 2.78}
-    newSize: {x: 1, y: 1}
+    pivot: {x: 0.28, y: 0.47}
+    oldSize: {x: 3.2, y: 2.85}
+    newSize: {x: 3.2, y: 2.85}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a72f730ad740ec74689752c46d352ed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animName: WalkerWalk
+  animName: WalkerIdle
   frameTime: 0.2
   flipX: 0
   flipY: 0
@@ -208,7 +208,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.2, y: 2.85}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

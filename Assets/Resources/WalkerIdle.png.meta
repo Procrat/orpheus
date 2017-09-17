@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 36c8b9f30fb80b6469bb9baa50d8465b
-timeCreated: 1505558209
+timeCreated: 1505608334
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -82,10 +82,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 257
-        height: 278
+        width: 320
+        height: 285
       alignment: 9
-      pivot: {x: 0.35, y: 0.45}
+      pivot: {x: 0.28, y: 0.47}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -94,12 +94,12 @@ TextureImporter:
       name: WalkerIdle_1
       rect:
         serializedVersion: 2
-        x: 257
+        x: 320
         y: 0
-        width: 257
-        height: 278
+        width: 320
+        height: 285
       alignment: 9
-      pivot: {x: 0.35, y: 0.45}
+      pivot: {x: 0.28, y: 0.47}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

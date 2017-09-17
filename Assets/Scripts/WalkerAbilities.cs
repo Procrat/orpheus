@@ -6,8 +6,17 @@ public class WalkerAbilities: MonoBehaviour {
 
     public float walkSpeed = 2.0f;
     public float acceleration = 0.3f;
-
-    public void Move(float amount) {
+	private string state = "alive";
+	private AnimationScript animationScript;
+	
+	void Start()
+	{
+		animationScript = GetComponent<AnimationScript>();
+	}
+	
+    public void Move(float amount, bool isPlayer) {
+		if(state != "alive") return;
+		
         if (amount == 0) {
             walkSpeed = 2;
         }
@@ -17,24 +26,24 @@ public class WalkerAbilities: MonoBehaviour {
 
         transform.Translate(walkAmount * Vector2.right);
 		
-		AnimationScript animationScript = GetComponent<AnimationScript>();
+		string suffix = (isPlayer) ? "-P" : "";
 		
 		if(walkAmount < 0)
 		{
-			animationScript.ChangeAnim("WalkerWalk");
+			animationScript.ChangeAnim("WalkerWalk" + suffix);
 			animationScript.frameTime = 0.2f;
 			animationScript.flipX = true;
 		}
 		else
 		if(walkAmount > 0)
 		{
-			animationScript.ChangeAnim("WalkerWalk");
+			animationScript.ChangeAnim("WalkerWalk" + suffix);
 			animationScript.frameTime = 0.2f;
 			animationScript.flipX = false;
 		}
 		else
 		{
-			animationScript.ChangeAnim("WalkerIdle");
+			animationScript.ChangeAnim("WalkerIdle" + suffix);
 			animationScript.frameTime = 0.4f;
 		}
     }
@@ -48,5 +57,12 @@ public class WalkerAbilities: MonoBehaviour {
     public void SetWalkSpeed(float speed) {
         this.walkSpeed = speed;
     }
+	
+	public void die()
+	{
+		animationScript.ChangeAnim("WalkerDeath", false);
+		animationScript.frameTime = 0.1f;
+		state = "dead";
+	}
 }
 
