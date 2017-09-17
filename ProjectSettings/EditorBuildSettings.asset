@@ -23,3 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/End.unity
     guid: 5182a068f14844034ae616e61d9f707a
+  - enabled: 1
+    path: Assets/Died.unity
+    guid: b63b514ea035c7c46b7b6579fe7c65e6
