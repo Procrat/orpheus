@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface State{
 	void DoState();
+	float getDirectionFacing();
 }
 

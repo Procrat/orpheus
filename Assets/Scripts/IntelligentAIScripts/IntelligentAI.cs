@@ -7,24 +7,50 @@ public class IntelligentAI : MonoBehaviour {
 	private State currentState;
 	private GameObject player;
 	private PlayerManager playerManager;
+	public Vector3 dir;
+	bool following;
 
-	// Use this for initialization
+	float timeLeft = 2.0f;
+
 	void Start () {
-		this.currentState = WanderState;
+		this.currentState = GetComponent<WanderState> ();
 		playerManager = GameObject.Find ("Player manager").GetComponent<PlayerManager>();
 		player = playerManager.player;
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+
+	void reset(){
+		timeLeft = 2.0f;
+	}
+
+	void FixedUpdate () {
 
 		currentState.DoState ();
 
-		Vector3 distanceToPlayer = Vector3.Distance ((Vector2)transform.position, (Vector2)player.transform.position);
+		var distanceToPlayer = Vector3.Distance (transform.position, player.transform.position);
+		dir = (player.transform.position - transform.position).normalized;
+		if (distanceToPlayer < 4	) {
+			if (player.transform.position.x > transform.position.x && currentState.getDirectionFacing () == 1) {
+				//follow
+				currentState = GetComponent<AttackState> ();
+				following = true;
+			} else if (player.transform.position.x < transform.position.x && currentState.getDirectionFacing () == -1) {
+				currentState = GetComponent<AttackState> ();
+				following = true;
+			}
 
-		if(WanderState.){
-
+		} else if (following == true) {
+			this.currentState = GetComponent<StopState> ();
+			timeLeft -= Time.deltaTime;
+			if (timeLeft < 0) {
+				currentState = GetComponent<WanderState> ();
+				following = false;
+				reset ();
+			}
+		} else {
+			currentState = GetComponent<WanderState> ();
 		}
+
 
 	}
 }
