@@ -9,7 +9,7 @@ public class WalkerAbilities: MonoBehaviour {
 	private string state = "alive";
 	private AnimationScript animationScript;
 	
-	void Start()
+	void Awake()
 	{
 		animationScript = GetComponent<AnimationScript>();
 	}
@@ -30,20 +30,20 @@ public class WalkerAbilities: MonoBehaviour {
 		
 		if(walkAmount < 0)
 		{
-			animationScript.ChangeAnim("WalkerWalk" + suffix);
+			animationScript.ChangeAnim("Walker/WalkerWalk" + suffix);
 			animationScript.frameTime = 0.2f;
 			animationScript.flipX = true;
 		}
 		else
 		if(walkAmount > 0)
 		{
-			animationScript.ChangeAnim("WalkerWalk" + suffix);
+			animationScript.ChangeAnim("Walker/WalkerWalk" + suffix);
 			animationScript.frameTime = 0.2f;
 			animationScript.flipX = false;
 		}
 		else
 		{
-			animationScript.ChangeAnim("WalkerIdle" + suffix);
+			animationScript.ChangeAnim("Walker/WalkerIdle" + suffix);
 			animationScript.frameTime = 0.4f;
 		}
     }
@@ -58,11 +58,26 @@ public class WalkerAbilities: MonoBehaviour {
         this.walkSpeed = speed;
     }
 	
-	public void die()
+	public void Die()
 	{
-		animationScript.ChangeAnim("WalkerDeath", false);
-		animationScript.frameTime = 0.1f;
+		animationScript.ChangeAnim("Walker/WalkerDeath", false);
+		animationScript.frameTime = 0.13f;
 		state = "dead";
+	}
+	
+	public void Possess()
+	{
+		animationScript.ChangeAnim("Walker/WalkerPossess", false, AfterAnim);
+		animationScript.frameTime = 0.13f;
+		state = "possess";
+	}
+	
+	private void AfterAnim(string anim)
+	{
+		if(anim == "Walker/WalkerPossess")
+		{
+			state = "alive";
+		}
 	}
 }
 

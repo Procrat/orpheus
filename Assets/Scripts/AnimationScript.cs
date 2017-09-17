@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class AnimationScript : MonoBehaviour {
 	
@@ -13,6 +14,8 @@ public class AnimationScript : MonoBehaviour {
 	public bool flipX;
 	public bool flipY;
 	public bool loop;
+	private bool finished;
+	private Action<string> finishCallback;
 	
 	void Awake()
 	{
@@ -31,6 +34,9 @@ public class AnimationScript : MonoBehaviour {
 		timeCounter = 0f;
 		flipX = false;
 		flipY = false;
+		loop = true;
+		finished = false;
+		finishCallback = null;
 	}
 	
 	// Update is called once per frame
@@ -43,7 +49,15 @@ public class AnimationScript : MonoBehaviour {
 			if(fNum >= frames.Length)
 			{
 				if(loop) fNum = 0;
-				else fNum = frames.Length - 1;
+				else
+				{
+					fNum = frames.Length - 1;
+					if(!finished)
+					{
+						finished = true;
+						if(finishCallback != null) finishCallback(animName);
+					}
+				}
 			}
 		}
 		
@@ -63,6 +77,8 @@ public class AnimationScript : MonoBehaviour {
 		fNum = 0;
 		timeCounter = 0;
 		this.loop = loop;
+		finished = false;
+		finishCallback = null;
 		
 		loadFrames(animName);
 	}
@@ -70,5 +86,11 @@ public class AnimationScript : MonoBehaviour {
 	public void ChangeAnim(string newAnim)
 	{
 		ChangeAnim(newAnim, true);
+	}
+	
+	public void ChangeAnim(string newAnim, bool loop, Action<string> callback)
+	{
+		ChangeAnim(newAnim, loop);
+		finishCallback = callback;
 	}
 }

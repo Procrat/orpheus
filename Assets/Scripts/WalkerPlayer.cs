@@ -13,6 +13,7 @@ public class WalkerPlayer : MonoBehaviour {
         abilityScript = gameObject.GetComponent<WalkerAbilities>();
         
         Debug.Log(gameObject.name + " possessed!");
+        abilityScript.Possess();
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
@@ -21,7 +22,7 @@ public class WalkerPlayer : MonoBehaviour {
         }
         if (collision.gameObject.tag == "deadlyOnTouch") {
             playerManager.SendMessage("Die");
-            abilityScript.die();
+            abilityScript.Die();
             return;
         }
     }
