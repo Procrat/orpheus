@@ -10,6 +10,7 @@ public class Ghost : MonoBehaviour
     
     private bool gonnaPossess = false;
     private GameObject possessee = null;
+    private Vector2 possessPath;
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag == "enemy") {
@@ -24,11 +25,11 @@ public class Ghost : MonoBehaviour
 
     private void FixedUpdate ()
     {
-        if(gonnaPossess)
-        {
+        if (gonnaPossess) {
             MoveTowards();
+        } else {
+            FloatUp();
         }
-        else FloatUp();
     }
 
     private void FloatUp() {
@@ -39,18 +40,20 @@ public class Ghost : MonoBehaviour
     {
         gonnaPossess = true;
         this.possessee = possessee;
+        possessPath = possessee.transform.position - transform.position;
     }
     
     private void MoveTowards()
     {
         Vector2 direction = possessee.transform.position - transform.position;
-        Vector2 moveVector = Vector2.ClampMagnitude(direction, floatSpeed / 10);
-        
-        Debug.Log("ghostpos=" + transform.position + ", enemypos=" + possessee.transform.position);
-        Debug.Log(direction.magnitude);
-        //Debug.Log("moveMagnitude=" + moveVector.magnitude + ", floatSpeed=" + floatSpeed);
-        if(moveVector.magnitude - (floatSpeed / 10) < 0.0001)
+        Vector2 moveVector = Vector2.ClampMagnitude(direction, floatSpeed);
+
+        float fadeFactor = direction.magnitude / possessPath.magnitude;
+        this.GetComponent<SpriteRenderer>().material.color = new Color(1, 1, 1, fadeFactor);
+
+        if (moveVector.magnitude < floatSpeed - 0.0001)
         {
+            Debug.Log("Actually possessing...");
             gonnaPossess = false;
             playerManager.GetComponent<PlayerManager>().ActuallyPossess(possessee);
         }
