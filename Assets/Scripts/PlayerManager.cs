@@ -77,7 +77,7 @@ public class PlayerManager : MonoBehaviour {
         yield return new WaitForSeconds (ghostPerishDelay);
         Debug.Log("Awww. You lost.");
         // TODO change this once there is a death-scene
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Died");
     }
 
     private void Win ()
