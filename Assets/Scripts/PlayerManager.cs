@@ -11,6 +11,13 @@ public class PlayerManager : MonoBehaviour {
 
 	private Coroutine dieAfterAWhile;
 
+	public AudioClip deathSound;
+	private AudioSource source;
+
+	void Awake(){
+		source = GetComponent<AudioSource> ();
+	}
+
 	void Update()
 	{
         if (Input.GetButtonDown ("Cancel")) {
@@ -30,6 +37,9 @@ public class PlayerManager : MonoBehaviour {
 			Debug.Log("Internal error: Tried to die while already being a ghost!");
 			return;
 		}
+
+
+		source.PlayOneShot (deathSound, 1f);
 
         Debug.Log ("Hooray! You die!");
 
