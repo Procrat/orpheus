@@ -2565,6 +2565,7 @@ MonoBehaviour:
   ghost: {fileID: 999469509}
   ghostPerishDelay: 3
   deathSound: {fileID: 8300000, guid: 1f01dd24aa529a94da6c7ab0ea483248, type: 3}
+  possessSound: {fileID: 8300000, guid: ca009f117645ea9409dd42ecb0427dc8, type: 3}
 --- !u!4 &333432744
 Transform:
   m_ObjectHideFlags: 0

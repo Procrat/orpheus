@@ -12,6 +12,7 @@ public class PlayerManager : MonoBehaviour {
 	private Coroutine dieAfterAWhile;
 
 	public AudioClip deathSound;
+	public AudioClip possessSound;
 	private AudioSource source;
 
 	void Awake(){
@@ -54,6 +55,9 @@ public class PlayerManager : MonoBehaviour {
     }
 
 	public void Possess(GameObject enemy) {
+		
+		source.PlayOneShot (possessSound, 1f);
+
 		if (player != ghost) {
 			Debug.Log("Internal error: Tried to possess while not being a ghost!");
 			return;
