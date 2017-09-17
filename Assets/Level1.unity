@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311912, g: 0.3807398, b: 0.3587271, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2634,7 +2634,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2658,7 +2658,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!1 &335178531
 GameObject:
   m_ObjectHideFlags: 0
@@ -7039,7 +7039,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.11786556, y: 0.024615765}
+  m_Offset: {x: -0.12675762, y: 0.042399406}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7050,7 +7050,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1549473, y: 1.9315624}
+  m_Size: {x: 0.98303795, y: 1.8959951}
   m_EdgeRadius: 0
 --- !u!114 &999469512
 MonoBehaviour:
@@ -7718,16 +7718,36 @@ Prefab:
     - target: {fileID: 61596634518699092, guid: 453dd49ce616b3d4c9e61b8238df62d3,
         type: 2}
       propertyPath: m_Offset.x
-      value: -0.0069971085
+      value: -0.04152584
       objectReference: {fileID: 0}
     - target: {fileID: 61596634518699092, guid: 453dd49ce616b3d4c9e61b8238df62d3,
         type: 2}
       propertyPath: m_Size.x
-      value: 1.3061085
+      value: 1.237051
       objectReference: {fileID: 0}
     - target: {fileID: 1749341292450912, guid: 453dd49ce616b3d4c9e61b8238df62d3, type: 2}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61596634518699092, guid: 453dd49ce616b3d4c9e61b8238df62d3,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 0.56880474
+      objectReference: {fileID: 0}
+    - target: {fileID: 61596634518699092, guid: 453dd49ce616b3d4c9e61b8238df62d3,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 1.4579983
+      objectReference: {fileID: 0}
+    - target: {fileID: 212340855634988422, guid: 453dd49ce616b3d4c9e61b8238df62d3,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: -161788627
+      objectReference: {fileID: 0}
+    - target: {fileID: 212340855634988422, guid: 453dd49ce616b3d4c9e61b8238df62d3,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 50500792149218806, guid: 453dd49ce616b3d4c9e61b8238df62d3, type: 2}
