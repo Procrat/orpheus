@@ -51,8 +51,11 @@ TagManager:
   - name: Front Background
     uniqueID: 2933771067
     locked: 0
-  - name: Floors & Walls
+  - name: Floors
     uniqueID: 2782060439
+    locked: 0
+  - name: Walls
+    uniqueID: 3548889697
     locked: 0
   - name: Fire & Spikes
     uniqueID: 4133178669

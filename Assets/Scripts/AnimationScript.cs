@@ -56,12 +56,11 @@ public class AnimationScript : MonoBehaviour {
 				}
 			}
 		}
-		
-		transform.localScale = Vector3.one;
-		
-		if(flipX) transform.localScale += new Vector3(-2, 0, 0);
-		if(flipY) transform.localScale += new Vector3(0, -2, 0);
-		
+		var scale = transform.localScale;
+		if(flipX != scale.x < 0) scale.x*= -1;
+		if(flipY != scale.y < 0) scale.y*= -1;
+		transform.localScale = scale;
+
 		sr.sprite = frames[fNum];
 	}
 	

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WalkerAbilities: MonoBehaviour {
 
+	public string animationPrefix = "Walker/Walker";
     public float walkSpeed = 2.0f;
     public float acceleration = 0.3f;
 	private string state = "alive";
@@ -30,20 +31,20 @@ public class WalkerAbilities: MonoBehaviour {
 		
 		if(walkAmount < 0)
 		{
-			animationScript.ChangeAnim("Walker/WalkerWalk" + suffix);
+			animationScript.ChangeAnim(animationPrefix + "Move" + suffix);
 			animationScript.frameTime = 0.2f;
 			animationScript.flipX = true;
 		}
 		else
 		if(walkAmount > 0)
 		{
-			animationScript.ChangeAnim("Walker/WalkerWalk" + suffix);
+			animationScript.ChangeAnim(animationPrefix + "Move" + suffix);
 			animationScript.frameTime = 0.2f;
 			animationScript.flipX = false;
 		}
 		else
 		{
-			animationScript.ChangeAnim("Walker/WalkerIdle" + suffix);
+			animationScript.ChangeAnim(animationPrefix + "Idle" + suffix);
 			animationScript.frameTime = 0.4f;
 		}
     }
@@ -60,14 +61,14 @@ public class WalkerAbilities: MonoBehaviour {
 	
 	public void Die()
 	{
-		animationScript.ChangeAnim("Walker/WalkerDeath", false);
+		animationScript.ChangeAnim(animationPrefix + "Death", false);
 		animationScript.frameTime = 0.13f;
 		state = "dead";
 	}
 	
 	public void Possess()
 	{
-		animationScript.ChangeAnim("Walker/WalkerPossess", false, AfterAnim);
+		animationScript.ChangeAnim(animationPrefix + "Possess", false, AfterAnim);
 		animationScript.frameTime = 0.13f;
 		state = "possess";
 		SetWalkSpeed(2f);
@@ -75,7 +76,7 @@ public class WalkerAbilities: MonoBehaviour {
 	
 	private void AfterAnim(string anim)
 	{
-		if(anim == "Walker/WalkerPossess")
+		if(anim == animationPrefix + "Possess")
 		{
 			state = "alive";
 		}

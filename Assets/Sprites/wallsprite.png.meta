@@ -1,12 +1,16 @@
 fileFormatVersion: 2
-guid: 1eab554891cce6b439962fbd6c804ce4
-timeCreated: 1505809229
+guid: 8655139cfdee98844be62abe29739c75
+timeCreated: 1505790475
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: BatDeath_0
-    21300002: BatDeath_1
-    21300004: BatDeath_2
+    21300000: wallsprite_0
+    21300002: wallsprite_1
+    21300004: wallsprite_2
+    21300006: wallsprite_3
+    21300008: wallsprite_4
+    21300010: wallsprite_5
+    21300012: wallsprite_6
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -78,43 +82,99 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BatDeath_0
+      name: wallsprite_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 0
-        width: 479
-        height: 255
-      alignment: 9
-      pivot: {x: 0.6, y: 0.4}
+        width: 617
+        height: 697
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: BatDeath_1
+      name: wallsprite_1
       rect:
         serializedVersion: 2
-        x: 479
+        x: 617
         y: 0
-        width: 479
-        height: 255
-      alignment: 9
-      pivot: {x: 0.6, y: 0.4}
+        width: 617
+        height: 697
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: BatDeath_2
+      name: wallsprite_2
       rect:
         serializedVersion: 2
-        x: 958
+        x: 1234
         y: 0
-        width: 479
-        height: 255
-      alignment: 9
-      pivot: {x: 0.6, y: 0.4}
+        width: 617
+        height: 697
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wallsprite_3
+      rect:
+        serializedVersion: 2
+        x: 1851
+        y: 0
+        width: 617
+        height: 697
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wallsprite_4
+      rect:
+        serializedVersion: 2
+        x: 2468
+        y: 0
+        width: 617
+        height: 697
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wallsprite_5
+      rect:
+        serializedVersion: 2
+        x: 3085
+        y: 0
+        width: 617
+        height: 697
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wallsprite_6
+      rect:
+        serializedVersion: 2
+        x: 3702
+        y: 0
+        width: 617
+        height: 697
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

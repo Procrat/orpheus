@@ -19,9 +19,15 @@ public class WalkerAI : MonoBehaviour {
 		if (!enabled) {
             return;
         }
-
+		if (name=="Bat"){
+			
+		Debug.Log ("Aargh colliding, aaargh," + walkingDirection + "," + collision.gameObject.tag);
+		}
 		if (collision.gameObject.tag == "deadlyOnTouch") {
 			walkingDirection = walkingDirection * -1;
+			if (name == "Bat") {
+				Debug.Log ("Walking direction is" + walkingDirection);
+			}
 			abilityScript.SetWalkSpeed (2);
 		}
 
